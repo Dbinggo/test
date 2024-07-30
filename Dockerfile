@@ -12,11 +12,11 @@ COPY go.mod go.sum ./
 COPY . .
 
 # 构建Go应用
-RUN go build  main.go
+RUN go build -o main  main.go
 
 FROM alpine:latest
 
-COPY --from=builder /app/main .
+COPY --from=builder /app/.* .
 
 # 运行Go应用
-CMD [ "chmod", "+x", "main" ,"&&", "./main"]
+CMD [ "ls","&&","chmod", "+x", "main" ,"&&", "./main"]
