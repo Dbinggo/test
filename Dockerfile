@@ -19,4 +19,4 @@ FROM alpine:latest
 COPY --from=builder /app/main .
 
 # 运行Go应用
-CMD ["/bin/bash", "-c", "chmod +x && ./main"]
+CMD [ "chmod +x && ./main"]
