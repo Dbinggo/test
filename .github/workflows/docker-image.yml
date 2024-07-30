@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        docker login -u yjddb -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+        docker buildx create --use
+        docker buildx build .   --push --tag yjddb/test:latest
