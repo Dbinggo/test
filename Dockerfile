@@ -10,8 +10,7 @@ COPY go.mod go.sum ./
 # 设置Go模块代理
 ENV GOPROXY=https://goproxy.cn,direct
 
-# 下载依赖
-RUN go mod download
+
 
 # 复制当前目录下的所有文件到工作目录
 COPY . .
