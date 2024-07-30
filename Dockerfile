@@ -13,8 +13,9 @@ RUN go build -o main  main.go
 # 使用轻量的Alpine作为基础镜像
 FROM alpine:latest
 
-COPY --from=builder /app/main /app/main
+COPY --from=builder /app/main .
+COPY . .
 
-RUN ["./app/main"]
+
 
 
