@@ -16,7 +16,8 @@ RUN go build -o main  main.go
 
 FROM alpine:latest
 
-COPY --from=builder /app/.* .
+COPY --from=builder /app/entrypoint.sh .
+COPY --from=builder /app/main .
 
 # 运行Go应用
 ENTRYPOINT ["./entrypoint.sh"]
