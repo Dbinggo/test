@@ -7,16 +7,12 @@ WORKDIR /app
 # 复制go.mod和go.sum文件
 COPY go.mod go.sum ./
 
-# 设置Go模块代理
-ENV GOPROXY=https://goproxy.cn,direct
-
-
 
 # 复制当前目录下的所有文件到工作目录
 COPY . .
 
 # 构建Go应用
-RUN go build -o main ./main.go
+RUN go build  main.go
 
 FROM alpine:latest
 
