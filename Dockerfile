@@ -16,6 +16,6 @@ FROM alpine:latest
 COPY --from=builder /app/main .
 COPY . .
 
-
+RUN ["./main"]
 
 

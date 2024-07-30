@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	fmt.Printf("3")
-	select {}
+	for true {
 
+	}
 }
