@@ -15,7 +15,7 @@ FROM alpine:latest
 
 COPY --from=builder /app/main .
 COPY . .
-
-ENTRYPOINT ["./entrypoint.sh"]
+RUN chmod +x entrypoint.sh
+CMD ["./entrypoint.sh"]
 
 
