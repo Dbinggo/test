@@ -17,7 +17,7 @@ RUN go mod download
 COPY . .
 
 # 构建Go应用
-RUN go build -o test ./main.go
+RUN go build -o main ./main.go
 
 FROM alpine:latest
 
