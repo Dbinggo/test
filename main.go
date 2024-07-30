@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("2")
+	fmt.Printf("3")
 	select {}
 
 }
